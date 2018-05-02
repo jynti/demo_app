@@ -407,11 +407,12 @@ ActiveRecord::Schema.define(version: 20180501102546) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
-    t.boolean "publishable"
+    t.boolean "publishable", default: true
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
     t.index ["name"], name: "index_spree_products_on_name"
+    t.index ["publishable"], name: "index_spree_products_on_publishable"
     t.index ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
     t.index ["slug"], name: "index_spree_products_on_slug", unique: true
     t.index ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
